@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+
+}
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+nav{
+	width: 100%;
+	height: 44px;
+	z-index: 999;	
+}
+
+header{
+	margin: 0 auto;
+	width: 100%;
+	height: 100vh;
+}
+
+/* navigation bar .menu ul li a and logo */
+.menu{
+	position: relative;
+	width: min(1000px, 90%);
+	margin: 0 auto;
+	z-index: 999; 
+}
+
+.menu ul{
+	margin: 0;
+	padding-right: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu ul li{
+	position: relative;
+	list-style: none;
+}
+
+.menu ul li,
+.menu ul li a{
+	text-decoration: none;
+	line-height: 44px;
+	color: rgba(0,0,0,.95);
+	transition: all 250ms ease-in;
+}
+.menu ul li a.logo{
+	font-size: 20px;
+	color:#fff;
+}
+.menu ul li:after{
+	position: absolute;
+	content: '';
+	width:100%;
+	height: 2px;
+	background-color:rgba(0,0,0,.9);
+	transform:scale(0);
+	transform-origin: left;
+	transition: all 250ms ease-in;
+
+}
+.menu ul li:nth-child(2):after,
+.menu ul li:nth-child(3):after,
+.menu ul li:nth-child(4):after{
+	background-color:#eceeef;
+}
+.menu ul li:hover:after{
+	transform-origin: left;
+	transform:scale(1);
+	transition: all 250ms ease-in;
+
+}
+.menu ul li:nth-child(7):after{
+	content: ;
+	display: none;
+}
+.menu ul li .fa.fa-apple{
+	font-size: 22px;
+}
+.menu ul li a.menu-item{
+	transform: scale(1);
+	transition: all 500ms ease-in;
+	display: block;
+}
+.menu ul li a.menu-item.hide-item{
+	transform: scale(0);
+	transition: all 500ms ease-in;
+}
+.menu ul li:nth-child(1) .menu-item,
+.menu ul li:nth-child(2) .menu-item,
+.menu ul li:nth-child(3) .menu-item, 
+.menu ul li:nth-child(4) .menu-item {
+    color: #ffffff;
+}
+.menu ul li:nth-child(1) a.menu-item.hide-item{
+	transition-delay: 0.11s;
+}
+.menu ul li:nth-child(2) a.menu-item.hide-item{
+	transition-delay: 0.9s;
+}
+.menu ul li:nth-child(3) a.menu-item.hide-item{
+	transition-delay: 0.7s;
+}
+.menu ul li:nth-child(4) a.menu-item.hide-item{
+	transition-delay: 0.5s;
+}
+.menu ul li:nth-child(5) a.menu-item.hide-item{
+	transition-delay: 0.3s;
+}
+.menu ul li:nth-child(6) a.menu-item.hide-item{
+	transition-delay: 0.1s;
+}
+/* search bar */
+.search-form{
+	position: absolute;
+	top:0;
+	left: 50%;
+	transform: translateX(0%);
+	width: min(600px, 50%);
+	height: 44px;
+	opacity: 0;
+	visibility: hidden;
+	background-color: transparent;
+	transition: all .3s ease-in .1s;
+}
+
+.search-form.active{
+	opacity: 1;
+	visibility: visible;
+	transition: all .6s ease-in .6s;
+	transform: translateX(-50%);
+
+}
+
+.search-form input{
+	width: 100%;
+	height: 44px;
+	background: transparent;
+	color: #fff;
+	border:none;
+	outline: none;
+}
+
+.search-form:before{
+	content:'\f002';
+	position: absolute;
+	top:50%;
+	left:-24px;
+	transform: translateY(-50%);
+	font-family: fontAwesome;
+	color:#fff;
+}
+
+.search-form input::placeholder{
+	
+	color: #fff;
+	
+}
+
+.close{
+	position: absolute;
+    top: 0;
+    right: 0;
+    height: 44px;
+    line-height: 44px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+.close.active{
+	color:#2e2e2e;
+	opacity: 1;
+    visibility: visible;
+}
+/* header main section */
+.main{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*z-index: -1;*/
+}
+.tone--1{
+	position: relative;
+	flex:1;
+	background-color: rgba(0, 0, 0, 0.82);
+}
+.tone--1 .main-content{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.main-content h2{
+    font-size: 52px;
+    color: #fff;
+    margin-bottom: 20px;
+    z-index: 2;
+    font-weight: 400;
+}
+.main-content p{
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.main-content button{
+    background-color: transparent;
+    padding: 15px 40px;
+    color: #fff;
+    border: 2px solid;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 17px;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: all 250ms ease-in;
+}
+.main-content button:hover{
+    background-color:#fff;
+    color: #4c4c4c;
+    transition: all 250ms ease-in;
+}
+.tone--2{
+	position: relative;
+	flex:1;
+	background-color: rgba(241, 240, 240, 0.88);
+}.tone--2 img{
+
+	position: absolute;
+	width: min(300px, 99%);
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	background-repeat: no-repeat;
+}
+.tone--2 .indicator{
+	position: absolute;
+	left: 10%;
+	bottom: 20px;
+	transform: translateX(-90%);
+}
+svg#Layer_1 {
+    width: 16px;
+}
+
+/* End Header Section */
